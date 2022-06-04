@@ -1,0 +1,25 @@
+               This is an example of a telephone list.
+
+ Most of the numbers in this directory were picked at random from a magazine.
+ Use the arrow keys to scroll.
+
+ In order to use the search feature, press F4. Then enter: BOOK to
+ indicate that you want the dialer to find all lines containing the
+ word BOOK.
+
+ You should use the Notepad to create and sort your own telephone directory.
+
+AST   1(714)-863-1333   AST Research, Inc.       (PC multifunction boards)
+                        Irvine, Califonia
+BB    1(609)-426-4254   Byte Books               (General)
+CP    1(415)-786-0909   CompuPro                 (S100,CPU,68000)
+ERI   1(314) 725-5566   EnerTronics              (Graphics,3D,software)
+INF   P1(619)555-1212   Information              (example of pulse dialing)
+PH    1(609)-927-3770   Plum Hall                (Unix,C,Books)
+SCS   1(408) 287-4640   Santa Clara Systems Inc. (PC clones,network,LAN)
+SDS   1(214)-340-0303   SDSystems                (S100,Disk controllers, CPU)
+SYB   1(415) 848-8233   SYBEX                    (Books)
+TAV   1(714) 261-0200   Tava                     (PC Clones)
+TI         9@767-2626   Time                     (example of variable pause)
+TI         9,767-8900   Time                     (example of 2 second pause)
+TV    1(408) 745-7760   Televideo                (PC Compatible)

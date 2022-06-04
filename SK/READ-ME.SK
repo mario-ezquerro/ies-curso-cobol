@@ -1,0 +1,363 @@
+
+                         Welcome to SideKick!
+                         --------------------
+
+     This   version   of    SideKick,    version  1.56A,    contains
+     enhancements not covered in the Owner's Handbook.  In order not
+     to miss any of the exciting  new  features, please  read  this
+     entire file.  This file is divided  into  four  sections:  "New
+     Features,"  "Corrections/Omissions,"  "Questions,  Answers  and
+     Hints," and  "Additional File List."
+
+              *********************************************
+              *                                           *
+              *   Need  help with SideKick?  Please see   *
+              *   Appendix C, HELP!!!  for  answers  to   *
+              *   the most commonly asked questions.      *
+              *                                           *
+              *********************************************
+
+
+                         --------------------
+
+
+     If you need help with SideKick, please read this file  and  the
+     Owner's Handbook, especially Appendix C, HELP!!!.
+
+     If you still have a question  and  need  technical  assistance,
+     help is available from the following sources:
+
+     1)  Type GO BOR100 on the CompuServe bulletin board system.
+     2)  Check with your local software dealer or user group.
+     3)  Write to:  Borland International
+                    SideKick Technical Support
+                    4585 Scotts Valley Drive
+                    Scotts Valley, CA 95066
+     4)  If you have an urgent problem that  cannot  wait,  you  can
+     call the Borland technical support department.
+
+     Please have the following information ready before calling:
+
+     1)  Product name and version  number  (the  version  number  of
+         SideKick can be found by  bringing  up  the  Setup  window:
+         press <Ctrl-Alt> and then press <AltS>. The top line of the
+         window frame contains the version number).
+     2)  Computer name, model and the names and model numbers of any
+         additional hardware.
+     3)  Operating system and version number (the version number can
+         be determined by typing <VER> at any DOS prompt).
+     4)  Contents of your AUTOEXEC.BAT file.
+     5)  Contents of your CONFIG.SYS file.
+
+
+                         --------------------
+
+
+                             NEW FEATURES
+
+
+     The following features have been added to SideKick:
+
+
+     1)  SideKick over graphics - If you activate SideKick while the
+         screen is displaying graphics, the screen will turn into  a
+         pattern of (possibly  blinking)  characters  that  make  no
+         sense.  This is because SideKick  switches  the  screen  to
+         TEXT mode.  Don't worry about that.  SideKick will work  as
+         usual, and the screen will  return  to  graphics  when  you
+         leave SideKick.  If you don't like this modern art  effect,
+         you can install SideKick to BLANK the  screen  when  it  is
+         invoked over  graphics,  restoring  the  graphics  when  it
+         leaves.  This feature takes up 4K of RAM.
+
+         To install  this  feature,  run  the  installation  program
+         "Skinst," and select "S" for Screen installation.   If  you
+         have   any  questions  about  how  to  do  this,  refer  to
+         Appendix B, Installation.
+
+
+     2)  Left Margin - We have added a left margin to  the  Notepad!
+         The left margin is activated on the paragraph level  rather
+         than the document level.  What this means is that  you  set
+         the left margin for each paragraph for which you  want  the
+         left margin to begin in a column other than column one.
+
+         To  set the left margin in the Notepad, place the cursor in
+         the column you want the left margin to be.  Press <Ctrl-P>,
+         and  then  press  <SpaceBar>.    Press  <Ctrl-Q> <G>  (this
+         turns graphics mode on) and the  current  position  of  the
+         left margin will be designated by ASCII  character 160 ( ).
+         To designate a new paragraph, simply insert  a  blank  line
+         and the new paragraph's left margin will be in  column one.
+
+
+     3)  Auto Indent with word wrap - If Auto Indent is on (this  is
+         the default), then each time the Notepad  word--wraps,  the
+         next line will begin in the column where the previous  line
+         began. If you turn  Auto  Indent  off  (<Ctrl-O> <Ctrl-I>),
+         then when word--wrap takes place the new  line  will  start
+         at the current left margin setting.
+
+
+     4)  F2 and F3 consistency - By popular demand, and to  be  more
+         consistent throughout the SideKick program, we have changed
+         the function  key  assignments  in  some  of  the  SideKick
+         windows.  The affected  windows  are  the  Dialer  and  the
+         Appointment Calendar.
+
+         If you wish to bring in a new file in  the  Dialer  window,
+         now you press <F3> (as in the Notepad) instead of <F2>. The
+         function keys that invoke searching in the Dialer have also
+         been changed to accomodate this.   <F5>  invokes  searching
+         by INITials, <F6> invokes searching all  and  <F7>  stop  a
+         search instead of <F3>, <F4>, and <F5> respectively.
+
+         If you wish to bring in  a  new  Appointment  file  in  the
+         Appointment Calendar, you now press <F3>  instead  of <F2>.
+         To print the current day's appointments, press <F2> instead
+         of <F3>.
+
+
+     5)  Turning word wrap off - Word wrap in  the  Notepad  can  be
+         disabled by setting the right margin (<Ctrl-O> <Ctrl-R>) to
+         250.
+
+
+
+                         --------------------
+
+
+
+                        CORRECTIONS/OMISSIONS
+
+
+Page 14 - Help
+--------------
+
+     If you press <Return>, the Help window will open:
+
+SHOULD BE:
+
+     If you press <Alt><H>, the Help window will open:
+
+
+Page 27-28 - caLendar
+---------------------
+
+     <F2> - Name          SHOULD BE:    <F3> - Name
+
+     <F3> - Print         SHOULD BE:    <F2> - Print
+
+NOTE: For an explanation of these  changes,  see  item 4  under  New
+Features in this file.
+
+
+Page 30 - Dialer
+----------------
+
+     <F2> - New file          SHOULD BE:    <F3> - New file
+
+     <F3> - search INITials   SHOULD BE:    <F5> - search INITials
+
+     <F4> - search all        SHOULD BE:    <F6> - search all
+
+     <F5> - stops search      SHOULD BE:    <F7> - stops search
+
+NOTE: For an explanation of these  changes,  see  item 4  under  New
+Features in this file.
+
+
+Page 64 - Word Wrap and Page Breaks
+-----------------------------------
+
+     3rd Paragraph:
+     Only the right margin can be set in Notepad;  the  left  margin
+     is always column one.
+
+SHOULD BE:
+
+     Both the right and left margin can be set; the left margin  can
+     be adjusted by.... (see item 2 under New Features in this  file
+     for an explanation of how to set the left margin).
+
+
+Page 73 - Calendar
+------------------
+
+     <F2> - Name          SHOULD BE:    <F3> - Name
+
+     <F3> - Print         SHOULD BE:    <F2> - Print
+
+NOTE: For an explanation of these  changes,  see  item 4  under  New
+Features in this file.
+
+
+Page 77 - Dialer
+----------------
+
+     <F2> - New file          SHOULD BE:    <F3> - New file
+
+     <F3> - search INITials   SHOULD BE:    <F5> - search INITials
+
+     <F4> - search all        SHOULD BE:    <F6> - search all
+
+     <F5> - stops search      SHOULD BE:    <F7> - stops search
+
+NOTE: For an explanation of these  changes,  see  item 4  under  New
+Features in this file.
+
+
+Page 110 - Symphony
+-------------------
+
+     Symphony must be installed for TOGGLED mode, not SHARED mode in
+     order for SideKick to work correctly.
+
+SHOULD BE:
+
+     Symphony can be installed for any  hardware  configuration  and
+     still be compatible with SideKick.
+
+
+Page 111 - Word
+---------------
+
+     When using Microsoft's WORD with SideKick, you should start WORD
+     with the command:
+
+     WORD/C <enter>
+
+     to make WORD use normal character mode instead of graphics.
+
+SHOULD BE:
+
+     SideKick  is  now  compatible  with  Microsoft's  Word  on  any
+     hardware configuration.  You can start WORD  with  any  of  the
+     following commands: WORD, WORD/C, WORD/H, WORD/L, WORD/M.
+
+NOTE: See  item 1  under  New Features  for  an  explanation  of  how
+SideKick can blank a graphics screen when invoked instead of creating
+modern art.
+
+
+                         -------------------
+
+
+                    QUESTIONS, ANSWERS AND HINTS
+
+
+     Q: When I try to save my Setup in the Setup window  or  try  to
+     access Help, I get an error message.
+
+     A: SideKick Help files, as well as SK.COM must  be  within  the
+     current "domain" of SideKick for SideKick  to  find  them.   In
+     other words, SideKick looks for these files on  the  DRIVE  and
+     DIRECTORY from where the command to load SideKick  was  issued.
+
+     If you are a floppy disk user, you must put the  SideKick  disk
+     into one of the drives, LOG onto that drive, and then issue the
+     "SK" command to load SideKick into memory.
+
+     If you are a hard disk user, the current directory must contain
+     all SideKick files before loading SideKick  into  memory.   For
+     instance, if you have a subdirectory called \SK, you must issue
+     the command "CD\SK" to make \SK the current directory, and then
+     type  "SK."  If you load SK through a path, the Help files will
+     not be found.
+
+
+     Q: The characters on my SideKick display are fuzzy.   Sometimes
+     I cannot see everything in the window.
+
+     A: Chances are you have a color/graphics adapter  with  a  one-
+     color composite monitor.  If this is the case, you must run the
+     installation  program  SKINST  and  select   "S"   for   screen
+     installation.    The correct monitor to choose is  the  "B & W"
+     monitor.
+
+
+     Q: How can I delete some of my Notepad files?
+
+     A: To delete Notepad files, exit to DOS and then use the Delete
+     command.
+
+
+     Q: Why can't I use <F1> to paste a block from the Notepad?
+
+     A: The <F1> key is reserved for Help in  SideKick.   Try  using
+     the <Alt> key in conjunction with another key, e.g., <Alt><P>.
+
+
+     Q: When I'm in the Notepad, if I press <enter> the cursor  goes
+     to the beginning of the same line instead of to the next line.
+
+     A: You are in Overwrite mode.  Press <Ctrl-V> to toggle back to
+     insert mode.  For more information about this refer to  page 50
+     in the Owner's Handbook.
+
+
+     Q: I accidentally programmed the "P" key with a number while in
+     the Calculator.  How do I un-program it?
+
+     A: While in the Calculator, hold down the  <Alt>  key  (if  you
+     have SuperKey loaded, hold down both the <Shift> and the  <Alt>
+     keys), and press <8> <0> (for "P"), and then  press  <C>.   All
+     programmed numbers will now be cleared.
+
+
+     Q: I accidentally programmed the "C" key with a number while in
+     the Calculator.  Now I can't clear my programmed keys.
+
+     A: Press the <P> key to enter the Paste  mode.   While  holding
+     down the <Alt> key (if you have SuperKey loaded hold down  both
+     the <Shift> and the  <Alt>  keys),  press <6> <7>.   This  will
+     clear your programmed keys.
+
+
+     Q: The Calendar will not accept a month when I try to print.
+
+     A: You must enter the number of the month, not the name of  the
+     month.
+
+
+     Q: When I try to bring up the Dialer, I get this  message:  "No
+     phone directory".
+
+     A: In the Setup window, you must specify the name and  location
+     of the file you want to use for the phone directory.   You  can
+     use the Notepad to create your phone directory.
+
+
+     Q: How do I sort my phone directory?
+
+     A: To sort your  phone  directory,  bring  the  file  into  the
+     Notepad and use Sort Block.  For more information about how  to
+     do this, refer to Page 54 of the Owner's Handbook.
+
+
+                         --------------------
+
+
+                         ADDITIONAL FILE LIST
+
+
+
+          File                    Description
+     ---------------------------------------------------------------
+
+
+     NOTES     - Sample notefile and introduction to SideKick
+
+     PHONE.DIR - Sample phone directory
+
+
+                         --------------------
+
+
+Lotus 123 and Symphony are trademarks of Lotus Development Corp.
+Word is a trademark of Microsoft Corp.
+
+                                 END
+
+
+

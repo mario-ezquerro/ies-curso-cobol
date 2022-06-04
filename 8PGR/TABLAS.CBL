@@ -1,0 +1,71 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. EJER1.
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SOURCE-COMPUTER. IBM400.
+       OBJECT-COMPUTER. IBM400.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT OPTIONAL PROVEEDORES ASSIGN TO DISK "PROVE.DAT"
+           ORGANIZATION IS INDEXED
+           ACCESS MODE IS RANDOM
+           RECORD KEY IS CODPROV
+           ALTERNATE RECORD KEY IS PROV WITH DUPLICATES.
+       DATA DIVISION.
+       FILE SECTION.
+       FD PROVEEDORES LABEL RECORD STANDARD.
+       01 REG-PROV.
+           02 CODPROV PIC 9(5).
+           02 NOMBRE PIC X(25).
+           02 PROV PIC X(10).
+           02 SALDO PIC 9(6).
+       WORKING-STORAGE SECTION.
+       77 I PIC 9(3) VALUE 1.
+       77 TECLA1 PIC 99 COMP.
+       77 NADA PIC X.
+       77 VENT PIC 9(16).
+       01 TABLA.
+           02 ELEMENTO OCCURS 100.
+               03 T-CODPROV PIC X(5).
+               03 T-NOMBRE PIC X(25).
+               03 T-PROV PIC X(10).
+               03 T-SALDO PIC 9(6).
+       PROCEDURE DIVISION.
+       MAIN.
+           OPEN OUTPUT PROVEEDORES.
+           DISPLAY " " ERASE
+           MOVE 0000248011000000 TO VENT
+           CALL "VENTANA.COB" USING VENT
+           DISPLAY "CODIGO PROVEEDOR:  00000 " LINE 8 POSITION 5
+           DISPLAY "NOMBRE..........:" LINE 10 POSITION 5
+           DISPLAY "PROVINCIA.......:" LINE 12 POSITION 5
+           DISPLAY "SALDO...........:" LINE 14 POSITION 5
+           PERFORM CARGAR VARYING I FROM 1 BY 1 UNTIL I > 100 OR
+               TECLA1 = 27
+           PERFORM GRABAR VARYING I FROM 1 BY 1 UNTIL I > 100
+             OR T-CODPROV(I) = " "
+           CLOSE PROVEEDORES
+           STOP RUN.
+       CARGAR.
+           ACCEPT T-CODPROV(I) LINE 8 POSITION 24 ON EXCEPTION TECLA1
+             CONTINUE
+           END-ACCEPT
+           IF TECLA1 NOT EQUAL 27
+                ACCEPT T-NOMBRE(I) LINE 10 POSITION  24 TAB
+                ACCEPT T-PROV(I) LINE 12 POSITION 24 TAB
+                ACCEPT T-SALDO(I) LINE 14 POSITION 24 TAB
+                DISPLAY "00000" LINE 8 POSITION 24
+                DISPLAY "                        " LINE 10 POSITION 24
+                DISPLAY "                        " LINE 12 POSITION 24
+                DISPLAY "                        " LINE 14 POSITION 24
+           END-IF.
+       GRABAR.
+           MOVE ELEMENTO(I) TO REG-PROV
+           WRITE REG-PROV INVALID KEY CONTINUE.
+
+
+
+
+
+
+

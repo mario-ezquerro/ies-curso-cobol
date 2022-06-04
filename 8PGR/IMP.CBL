@@ -1,0 +1,114 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. EJER1.
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SOURCE-COMPUTER. IBM400.
+       OBJECT-COMPUTER. IBM400.
+       SPECIAL-NAMES.
+           DECIMAL-POINT IS COMMA.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT OPTIONAL PROVEEDORES ASSIGN TO DISK "PROVE.DAT"
+           ORGANIZATION IS INDEXED
+           ACCESS MODE IS SEQUENTIAL
+           RECORD KEY IS CODPROV
+           ALTERNATE RECORD KEY IS PROV WITH DUPLICATES.
+           SELECT LISTADO ASSIGN TO PRINT "PRINTER".
+       DATA DIVISION.
+       FILE SECTION.
+       FD PROVEEDORES LABEL RECORD STANDARD.
+       01 REG-PROV.
+           02 CODPROV PIC 9(5).
+           02 NOMBRE PIC X(25).
+           02 PROV PIC X(10).
+           02 SALDO PIC 9(6).
+       FD LISTADO LABEL RECORD OMITTED.
+       01 LINEA PIC X(80).
+       WORKING-STORAGE SECTION.
+       77 CONTLIN PIC 99 VALUE 0.
+       77 CONTPAG PIC 99 VALUE 1.
+       77 SS PIC 9(11).
+       77 TOTAL PIC 9(11) VALUE ZEROS.
+       77 VENT PIC 9(16).
+       77 FIN PIC 9 VALUE 1.
+       77 NADA PIC X.
+       01 LIN1.
+           02 FILLER PIC X(3) VALUE SPACES.
+           02 FILLER PIC X(16) VALUE "CODIGO PROVINCIA".
+           02 FILLER PIC X(8) VALUE SPACES.
+           02 FILLER PIC X(6) VALUE "NOMBRE".
+           02 FILLER PIC X(22) VALUE SPACES.
+           02 FILLER PIC X(9) VALUE "PROVINCIA".
+           02 FILLER PIC X(8) VALUE SPACES.
+           02 FILLER PIC X(5) VALUE "SALDO".
+       01 LIN2.
+           02 FILLER PIC X(74) VALUE SPACES.
+           02 FILLER PIC X VALUE "-".
+           02 L-CONTPAG PIC 9.
+           02 FILLER PIC X VALUE "-".
+       01 LINDET.
+           02 FILLER PIC X(9) VALUE SPACES.
+           02 L-COPROV PIC ZZ.ZZ9.
+           02 FILLER PIC X(12) VALUE SPACES.
+           02 L-NOMBRE PIC X(25).
+           02 FILLER PIC X(3) VALUE SPACES.
+           02 L-PROV PIC X(10).
+           02 FILLER PIC X(5) VALUE SPACES.
+           02 L-SALDO PIC ZZZ.ZZ9.
+       01 LIN3.
+           02 FILLER PIC X(48) VALUE SPACES.
+           02 FILLER PIC X(15) VALUE "SUMA Y SIGUE: ".
+           02 L-TOTAL PIC ZZ.ZZZ.ZZZ.ZZ9.
+       01 LIN4.
+           02 FILLER PIC X(46) VALUE SPACES.
+           02 FILLER PIC X(17) VALUE "SUMA  ANTERIOR:  ".
+           02 L-SS PIC ZZ.ZZZ.ZZZ.ZZ9.
+       01 LIN5.
+           02 FILLER PIC X(56) VALUE SPACES.
+           02 FILLER PIC X(7) VALUE "TOTAL: ".
+           02 L-FIN PIC ZZ.ZZZ.ZZZ.ZZ9.
+       PROCEDURE DIVISION.
+       MAIN.
+           OPEN INPUT PROVEEDORES
+           OPEN OUTPUT LISTADO
+           DISPLAY " " ERASE
+           MOVE CONTPAG TO L-CONTPAG
+           WRITE LINEA FROM LIN2 BEFORE 3
+           WRITE LINEA FROM LIN1 BEFORE 3
+           READ PROVEEDORES AT END MOVE 0 TO FIN
+           END-READ.
+           PERFORM IMPRIME UNTIL FIN = 0
+           MOVE TOTAL TO L-TOTAL
+           WRITE LINEA FROM LIN3 BEFORE 1
+           COMPUTE SS = SS + TOTAL
+           MOVE SS TO L-FIN
+           WRITE LINEA FROM LIN5 BEFORE PAGE
+           CLOSE PROVEEDORES LISTADO.
+           STOP RUN.
+        IMPRIME.
+           IF CONTLIN < 4
+                 COMPUTE TOTAL = TOTAL + SALDO
+                 MOVE CODPROV TO L-COPROV
+                 MOVE NOMBRE TO L-NOMBRE
+                 MOVE PROV TO L-PROV
+                 MOVE SALDO TO L-SALDO
+                 WRITE LINEA FROM LINDET BEFORE 1
+                 COMPUTE CONTLIN = CONTLIN + 1
+                   ELSE MOVE TOTAL TO L-TOTAL
+                        WRITE LINEA FROM LIN3 BEFORE 2
+                        COMPUTE SS = SS + TOTAL
+                        MOVE SS TO L-SS
+                        COMPUTE CONTPAG = CONTPAG + 1
+                        MOVE CONTPAG TO L-CONTPAG
+                        WRITE LINEA FROM LIN2 BEFORE 3
+                        WRITE LINEA FROM LIN4 BEFORE 2
+                        WRITE LINEA FROM LIN1 BEFORE 3
+                        MOVE 0 TO CONTLIN
+                        MOVE 0 TO TOTAL
+           END-IF.
+           READ PROVEEDORES AT END MOVE 0 TO FIN.
+
+
+
+
+
